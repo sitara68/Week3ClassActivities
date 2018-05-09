@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <script>
+        //Ask if they like steak
+        var steak = confirm("Do you eat steak?"); //returns boolean
+        
+        //If they respond true or click OK to steak, then write Here's a Steak Sandwich!
+        if (steak) //boolean conditional
+         {
+            document.write("Here's a Steak Sandwich!");
+            
+        } 
+        //If they respond false or click Cancel, then write Here's a Tofu Stir-Fry!
+        else {
+            document.write("Here's a Tofu Stir-Fry!");
+        }
+        
+        //BONUS: What year were you born
+        //Ask what year a user was born with a prompt. The response returns a string value
+        var yearBorn = prompt("What year were you born?"); //return string
+
+        //Get the current date to compare to the yearBorn
+        var d = new Date();
+
+        //Calculate the age by getting the Year of the Current date and subtracting the yearBorn after parsing it to an integer
+        var age = d.getFullYear() - parseInt(yearBorn);
+        
+        console.log(d.getFullYear());
+        console.log(age);
+        
+        //If the age variable returns as less than 21, then respond with No Sake for you!
+        if (age < 21) {
+            document.write("<br>");
+            document.write("No Sake for you!");
+        } 
+        //If the age variable is greater than 21, then respond with Have some Sake!
+        else {
+            document.write("<br>");
+            document.write("Have some Sake!");
+        }
+        
+    </script>
+    
+</body>
+</html>

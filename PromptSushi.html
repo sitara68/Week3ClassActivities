@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Sushi Prompt - Solved</title>
+  </head>
+  <body>
+
+        <button onclick="this.innerHTML = Date()">The time is?</button>
+
+    <script type="text/javascript">
+
+        var likes = confirm("Do you like cats?");
+        var catLikes = prompt("What kind of cat's do you like?");
+
+        alert(likes);
+        alert("You like " + catLikes + " cat's.");
+        
+    //Creating objects practice
+        var likeCats = {
+            iLikeCats: true,
+            iLikeCatType: "Maine Coon",
+                  
+        };   
+        
+        whatAboutCats = function(p1, p2) {
+            return "I like cats: " + p1 + ". I like: " + p2 + "'s";
+        }     
+
+        alert(whatAboutCats(likeCats.iLikeCats, likeCats.iLikeCatType));
+
+    </script>
+
+  </body>
+</html>

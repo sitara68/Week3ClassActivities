@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Conditional Demo</title>
+  </head>
+  <body>
+
+    <script type="text/javascript">
+        var ageRequirement = confirm("Are you at least 21?"); //returns a boolean
+
+        //If the user is at least 21, we will offer them an alcoholic drink
+        if (ageRequirement) {
+            ///=== is a hard equivalency (checks value as well as type)
+            //== simply check value (ignores type)
+            //= ASSIGNMENT this does not evaluate (always evaluates to true)
+            var typeOfLiquor = prompt("What're ya havin', Mac?");
+            document.write("Enjoy your " + typeOfLiquor);
+        } 
+        //else we will tell them to get out
+
+        else {
+            document.write("Get ouf of here, kid!");
+            
+        }
+        
+        //document.write("testing");
+    </script>
+
+  </body>
+</html>

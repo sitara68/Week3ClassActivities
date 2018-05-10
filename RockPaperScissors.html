@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Rock Paper Scissors</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <section>
+        <h1>SCOREBOARD</h1>
+        <h2>Choose between r, p, s</h2>
+
+        <p>Wins: <span id="wins"></span></p>
+        <p>Losses: <span id="losses"></span></p>
+        <p>Ties: <span id="ties"></span></p>
+    </section>
+    <section>
+        <h2 id="pbp"></h2>
+    </section>
+
+</head>
+<body>
+    <script>
+        //Game Rules
+        //Rock beats Scissors
+        //Scissors beats Paper
+        //Paper beats Rock
+
+        //Create two players, A and B
+
+        //Each player would have event that would choose Rock, Paper or Scissors
+
+        //If A = Rock and B = Scissors then A Wins
+        //If A = Scissors and B = Paper then A wins
+        //If A = Paper and B = Rock then A wins
+        
+        //If B = Rocks and A = Scissors then B wins
+        //If B = Scissors and A = Paper then B wins
+        //If B = Paper and A = Rock then B wins
+
+        //If both are the same, then no one wins
+
+        /**In Class Psuedocode**/
+        //Create and array of r, p, s choice
+        //Set Conditions / set possibilities
+        //Set variables for wins, losses and ties
+        //Computer picks a random choice between r, p, s
+        //On Key player event types in r, p, s
+        //Register user input / key input
+        //Compare user choice to computer
+        //Tally if its a win, loss, or draw
+        
+        var wins = 0;
+        var losses = 0;
+        var ties = 0;
+        var choices = ["r","p","s"];
+        var computerChoice = '';
+        var userChoice = '';
+
+        function setScoreboardValues(string, value) {
+            document.getElementById(string).textContent = value;
+        }
+
+        setScoreboardValues('wins', wins);
+        setScoreboardValues('losses', losses);
+        setScoreboardValues('ties', ties);
+        
+        document.onkeyup = function(event)
+        {
+            computerChoice = choices[Math.floor(Math.random() * 3)];
+            userChoice = event.key;
+            if (choices.indexOf(userChoice) > -1) {
+
+                if(computerChoice === userChoice)           
+                {                
+                    setScoreboardValues("pbp", "It's a tie!");
+                    ties++;
+                    setScoreboardValues('ties', ties);
+                }
+                else 
+                {
+                    if(userChoice === 'r' && computerChoice !== 'p' ||
+                    userChoice === 'p' && computerChoice !== 's' ||
+                    userChoice === 's' && computerChoice !== 'r') {
+                        
+                        wins++;
+                        setScoreboardValues('wins', wins);
+                        setScoreboardValues("pbp", "YOU WIN!");
+                    }
+                else {                
+                    losses++;
+                    setScoreboardValues('losses', losses);
+                    setScoreboardValues("pbp", "LOSER!");
+                    }
+                }
+            }
+            else {
+                setScoreboardValues("pbp", "You must choose an r, s, or p!");
+            }
+        }     
+
+    </script>
+    
+</body>
+</html>

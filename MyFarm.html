@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+
+    <script>
+        var myFarm = ["chickens", "pigs", "cows", "horses", "ostriches"];
+
+        for (var i = 0; i < myFarm.length; i++)
+        {
+            if (myFarm[i].startsWith("c"))
+            {
+                alert(myFarm[i] + " starts with c.");
+            }
+            else if (myFarm[i].startsWith("o"))
+            {
+                alert(myFarm[i] + " starts with o.");
+            }
+            else 
+            {
+                alert(myFarm[i] + " does not start with a c or an o.")
+            }
+        }
+
+        for (var i = 0; i < myFarm.length; i++)
+        {
+            if (myFarm[i].charAt(0) === "c")
+            {
+                document.write(myFarm[i] + " starts with c." + "<br>");
+            }
+            else if (myFarm[i].charAt(0) === "o")
+            {
+                document.write(myFarm[i] + " starts with o." + "<br>");
+            }
+            else {
+                document.write(myFarm[i] + " does not start with a c or an o." + "<br>")
+                }
+
+                var wordlength = myFarm[i].length;
+                document.write("The length of this word is " + wordlength + "<br>");
+        }
+
+        var myFarmLength = myFarm.length;
+        //STRING.charAt(int) returns a character at that index
+        for (var i = 0; i < myFarmLength; i++)
+        {
+            console.log(myFarm[i]);
+
+            if (myFarm[i].charAt(0) === "c" || myFarm[i].charAt(0) === "o")
+            {
+                alert("Starts with c or o.");
+            }
+        }
+    </script>
+    
+</body>
+</html>
